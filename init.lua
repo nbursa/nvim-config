@@ -36,6 +36,9 @@ require('lazy').setup({
     config = function()
       require('config.lspconfig')
     end
+  },
+  {
+    "nvim-lua/plenary.nvim",
   }
 })
 
