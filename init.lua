@@ -30,5 +30,14 @@ require('lazy').setup({
     config = function()
       require('config.treesitter')
     end
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require('config.lspconfig')
+    end
   }
 })
+
+-- Load custom keybindings
+require('config.keybindings')
