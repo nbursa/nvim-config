@@ -77,6 +77,16 @@ require('lazy').setup({
     config = function()
       require('config.lualine')
     end
+  },
+  {
+    "morhetz/gruvbox",
+    config = function()
+      vim.cmd [[
+        colorscheme gruvbox
+        hi Normal guibg=NONE ctermbg=NONE
+        hi NonText guibg=NONE ctermbg=NONE
+      ]]
+    end
   }
 })
 
