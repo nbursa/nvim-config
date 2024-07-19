@@ -63,6 +63,13 @@ require('lazy').setup({
   },
   {
     "L3MON4D3/LuaSnip",
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require('config.telescope')
+    end
   }
 })
 
