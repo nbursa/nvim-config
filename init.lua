@@ -1,6 +1,6 @@
 -- Set leader key
-vim.g.mapleader = ';'  -- Semicolon as leader key
-vim.g.maplocalleader = ';'  -- Semicolon as local leader key
+vim.g.mapleader = ';'
+vim.g.maplocalleader = ';'
 
 -- Enable line numbers
 vim.wo.number = true
