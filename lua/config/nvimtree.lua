@@ -20,6 +20,10 @@ require'nvim-tree'.setup {
     dotfiles = false,
     custom = {}
   },
+  git = {
+    enable = true,
+    ignore = false,
+  }
 }
 
 -- Set keybindings for nvim-tree

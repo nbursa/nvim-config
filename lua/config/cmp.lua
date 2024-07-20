@@ -1,5 +1,3 @@
--- ~/.config/nvim/lua/config/cmp.lua
-
 local cmp = require'cmp'
 local luasnip = require'luasnip'
 local lspkind = require('lspkind')
@@ -48,9 +46,9 @@ cmp.setup({
   }),
   formatting = {
     format = lspkind.cmp_format({
-      mode = 'symbol_text', -- show both symbol and text
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part will show ellipsis_char instead (must define maxwidth first)
+      mode = 'symbol_text',
+      maxwidth = 50,
+      ellipsis_char = '...',
     })
   },
   window = {
