@@ -1,6 +1,3 @@
--- ~/.config/nvim/lua/config/plugins.lua
-
--- Load lazy.nvim
 vim.cmd [[packadd lazy.nvim]]
 
 require('lazy').setup({
@@ -38,6 +35,10 @@ require('lazy').setup({
     config = function()
       require('config.lspconfig')
     end
+  },
+  {
+    "jose-elias-alvarez/nvim-lsp-ts-utils",
+    requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"},
   },
   {
     "nvim-lua/plenary.nvim",

@@ -1,4 +1,3 @@
--- Load the Kanagawa theme
 require('kanagawa').setup({
     compile = true,             -- enable compiling the colorscheme
     undercurl = true,           -- enable undercurls

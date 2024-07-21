@@ -38,6 +38,6 @@ require("which-key").setup({
     align = "left",
   },
   show_help = true,
-  triggers = "auto",
+  triggers = {"<leader>", "<c-w>"},
 })
 

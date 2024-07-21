@@ -1,34 +1,23 @@
--- Import the lspconfig module
 local lspconfig = require('lspconfig')
+local ts_utils = require('nvim-lsp-ts-utils')
 
--- Configure the language servers you want to use
--- Example configuration for a few popular language servers
+-- Common on_attach function to enable mouse interactions
+local on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  local buf_set_option = vim.api.nvim_buf_set_option
+  buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
--- Python
-lspconfig.pyright.setup{}
+  -- Enable mouse interactions
+  vim.opt.mouse = "a"
 
--- TypeScript/JavaScript
-lspconfig.tsserver.setup{}
+  -- Configure nvim-lsp-ts-utils
+  ts_utils.setup({})
+  ts_utils.setup_client(client)
+end
 
--- Lua
-lspconfig.lua_ls.setup{
-  settings = {
-    Lua = {
-      runtime = {
-        version = 'LuaJIT',
-        path = vim.split(package.path, ';'),
-      },
-      diagnostics = {
-        globals = {'vim'},
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-}
+-- Setup LSP for TypeScript
+lspconfig.tsserver.setup({
+  on_attach = on_attach,
+  cmd = { "typescript-language-server", "--stdio" },
+})
 
--- Additional language servers can be configured here
