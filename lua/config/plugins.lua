@@ -76,16 +76,23 @@ require('lazy').setup({
   },
   {
     "nvim-lualine/lualine.nvim",
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    requires = { "kyazdani42/nvim-web-devicons", opt = true },
     config = function()
       require('config.lualine')
     end
   },
   {
-    'rebelot/kanagawa.nvim',
+    "rebelot/kanagawa.nvim",
     config = function()
       require('config.kanagawa')
     end
+  },
+  {
+    "numToStr/Comment.nvim",
+    opts = {
+        -- add any options here
+    },
+    lazy = false,
   }
 })
 
