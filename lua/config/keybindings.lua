@@ -44,3 +44,7 @@ vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 map('n', '<C-LeftMouse>', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 map('n', '<C-RightMouse>', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
+-- ChatGPT key mappings
+map('n', '<leader>gq', ':lua require("config.chatgpt").chatgpt_query_with_topic()<CR>', opts)
+map('n', '<leader>ga', ':lua require("config.chatgpt").add_finding_with_topic()<CR>', opts)
+

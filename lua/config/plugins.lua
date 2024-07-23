@@ -93,6 +93,19 @@ require('lazy').setup({
         -- add any options here
     },
     lazy = false,
-  }
+  },
+  {
+    "akinsho/bufferline.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require('config.nvim-bufferline')
+    end
+  },
+  {
+    "famiu/bufdelete.nvim",
+  },
+  config = function()
+    require('config.chatgpt')
+  end,
 })
 
