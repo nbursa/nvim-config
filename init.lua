@@ -33,6 +33,12 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    require('config.keybindings')
+  end
+})
+
 -- Load custom keybindings
 require('config.keybindings')
 
