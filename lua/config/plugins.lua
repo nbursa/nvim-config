@@ -104,9 +104,6 @@ require('lazy').setup({
   {
     "famiu/bufdelete.nvim",
   },
-  config = function()
-    require('config.chatgpt')
-  end,
 }, {
   lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json",
 })
