@@ -1,5 +1,3 @@
--- ~/.config/nvim/lua/config/gitsigns.lua
-
 local M = {}
 
 function M.setup()
