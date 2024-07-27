@@ -104,6 +104,13 @@ require('lazy').setup({
   {
     "famiu/bufdelete.nvim",
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require('config.gitsigns').setup()
+    end
+  },
 }, {
   lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json",
 })
