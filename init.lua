@@ -9,6 +9,14 @@ vim.wo.relativenumber = true
 -- Enable mouse support
 vim.opt.mouse = 'a'
 
+-- Enable filetype detection
+vim.cmd 'filetype on'
+vim.cmd 'filetype plugin on'
+vim.cmd 'filetype indent on'
+
+-- Enable syntax highlighting
+vim.cmd 'syntax on'
+
 vim.api.nvim_exec([[
   augroup BufferlineCustomCSS
     autocmd!
@@ -44,4 +52,5 @@ require('config.keybindings')
 
 -- Load plugin configurations
 require('config.plugins')
+
 
