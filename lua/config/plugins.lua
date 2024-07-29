@@ -81,12 +81,12 @@ require('lazy').setup({
       require('config.lualine')
     end
   },
-  {
-    "rebelot/kanagawa.nvim",
-    config = function()
-      require('config.kanagawa')
-    end
-  },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   config = function()
+  --     require('config.kanagawa')
+  --   end
+  -- },
   {
     "numToStr/Comment.nvim",
     opts = {
@@ -111,6 +111,25 @@ require('lazy').setup({
       require('config.gitsigns').setup()
     end
   },
+  {
+    "projekt0n/github-nvim-theme",
+    config = function()
+      require('config.github-theme')
+      vim.cmd('colorscheme github_dark_dimmed')
+    end 
+  },
+  -- {
+  --   "sho-87/kanagawa-paper.nvim",
+  --   config = function()
+  --     require('config.kanagawa-paper')
+  --   end 
+  -- },
+  -- { 
+  --   "EdenEast/nightfox.nvim",
+  --   config = function()
+  --     vim.cmd('colorscheme carbonfox')
+  --   end
+  -- },
 }, {
   lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json",
 })

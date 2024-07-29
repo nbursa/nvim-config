@@ -17,6 +17,10 @@ vim.cmd 'filetype indent on'
 -- Enable syntax highlighting
 vim.cmd 'syntax on'
 
+-- Enable wrap and disable horizontal scrolling
+vim.opt.wrap = true
+vim.opt.sidescrolloff = 0
+
 vim.api.nvim_exec([[
   augroup BufferlineCustomCSS
     autocmd!
@@ -59,5 +63,4 @@ require('config.keybindings')
 
 -- Load plugin configurations
 require('config.plugins')
-
 
