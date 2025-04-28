@@ -21,3 +21,7 @@ map('n', '<leader>h', '<C-w>h', opts)
 map('n', '<leader>l', '<C-w>l', opts)
 map('n', '<leader>k', '<C-w>k', opts)
 map('n', '<leader>j', '<C-w>j', opts)
+
+-- Visual copy
+map('v', 'y', '"+y', opts)
+map('v', 'p', '"+p', opts)
