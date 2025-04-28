@@ -16,7 +16,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Setup LSP for TypeScript
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   on_attach = on_attach,
   cmd = { "typescript-language-server", "--stdio" },
 })
