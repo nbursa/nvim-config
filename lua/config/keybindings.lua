@@ -1,50 +1,32 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- Copy selected text to clipboard in visual mode
-map('v', '<leader>y', '"+y', opts)
+-- General keymaps
+map('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
+map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
+map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
+map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
+map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
 
--- Copy the current line to clipboard
-map('n', '<leader>Y', '"+yy', opts)
+-- Git keymaps
+map('n', '<leader>gs', ':G<CR>', opts)
 
--- Copy the entire file content to clipboard
-map('n', '<leader>ya', 'gg"+yG', opts)
-
--- NvimTree key mappings
-map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
-map('n', '<leader>f', ':NvimTreeFindFile<CR>', opts)
-map('n', '<leader>t', ':NvimTreeFocus<CR>', opts)
-
--- Telescope key mappings
-map('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
-map('n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-map('n', '<leader>fb', "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
-map('n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
-
--- LSP key mappings
+-- LSP keymaps
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-map('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-map('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-map('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-map('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-map('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-map('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-map('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-map('n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
-vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 
--- Mouse mappings for LSP interactions
-map('n', '<C-LeftMouse>', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-map('n', '<C-RightMouse>', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+-- Disable single 'q' to prevent accidental macro recording
+vim.keymap.set("n", "q", "<Nop>", opts)
 
--- ChatGPT key mappings
-map('n', '<leader>gq', ':lua require("config.chatgpt").chatgpt_query_with_topic()<CR>', opts)
-map('n', '<leader>ga', ':lua require("config.chatgpt").add_finding_with_topic()<CR>', opts)
-
+-- Speedups
+map('n', 'qq', ':bd<CR>', opts) -- quick quit
+map('n', 'ss', ':w<CR>', opts) -- quick save
+map('n', 'tt', ':NvimTreeToggle<CR>', opts) -- toggle NvimTree
+map('n', 'sv', ':vsplit<CR>', opts) -- vertical split
+map('n', 'sh', ':split<CR>', opts) -- horizontal split
+map('n', '<leader>h', '<C-w>h', opts) -- move left split
+map('n', '<leader>l', '<C-w>l', opts) -- move right split
+map('n', '<leader>k', '<C-w>k', opts) -- move up split
+map('n', '<leader>j', '<C-w>j', opts) -- move down split
